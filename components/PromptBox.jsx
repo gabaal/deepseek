@@ -1,9 +1,33 @@
 import { assets } from "@/assets/assets";
+import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
 import { useState } from "react";
-
+import toast from "react-hot-toast";
 const PromptBox = ({ isLoading, setIsLoading }) => {
   const [prompt, setPrompt] = useState("");
+
+  const { user, chats, setChats, selectedChat, setSelectedChat } =
+    useAppContext();
+
+  const sendPrompt = async (e) => {
+    const promptCopy = prompt;
+
+    try {
+      e.preventDefault();
+      if (!user) return toast.error("Login to send message");
+      if (isLoading) return toast.error("Wait for previous response");
+
+      setIsLoading(true)
+      setPrompt('')
+      const userPrompt= {
+        role: 'user',
+        content: prompt,
+        timestamp: Date.now()
+      }
+
+      // Saving user prompt in chats array
+    } catch (error) {}
+  };
 
   return (
     <form
