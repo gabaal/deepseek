@@ -17,7 +17,7 @@ const ChatLabel = ({ openMenu, setOpenMenu }) => {
           } -right-36 top-6 bg-gray-700 rounded-xl w-max p-2`}
         >
           <div className="flex items-center gap-3 hover:bg-white/10 px-3 py-2 rounded-lg">
-            <Image src={assets.pecil_icon} alt="" className="w-4" />
+            <Image src={assets.pencil_icon} alt="" className="w-4" />
             <p>Rename</p>
           </div>
 
