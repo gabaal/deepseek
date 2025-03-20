@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(req) {
   try {
-    const { userId } = await getAuth(req);
+    const { userId } = getAuth(req);
 
     if (!userId) {
       return NextResponse.json({
